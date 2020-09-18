@@ -1,11 +1,11 @@
 import request from '@/utils/request'
 
 // 权限新增
-export function AddPermission(params) {
+export function AddPermission(data) {
     return request({
         url: '/admin/permissions',
         method: 'post',
-        params
+        data
     })
 }
 // 权限编辑
@@ -25,11 +25,11 @@ export function PermissionList(params) {
     })
 }
 // 权限删除
-export function delPermissionList(params) {
+export function delPermissionList(data) {
     return request({
         url: '/admin/permissions/'+localStorage.getItem('deleteId'),
         method: 'delete',
-        params
+        data
     })
 }
 // 权限更新

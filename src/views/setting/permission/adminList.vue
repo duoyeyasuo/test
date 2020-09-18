@@ -27,18 +27,18 @@
             >
             </el-table-column>
         </el-table>
-        <el-dialog title="权限新增" :visible.sync="dialogFormVisible" width='30%'>
+        <el-dialog title="新增管理员" :visible.sync="dialogFormVisible" width='30%'>
             <el-form :model="form">
-                <el-form-item label="管理员" >
+                <el-form-item label="用户名" >
                     <el-input v-model="form.name" auto-complete="off"></el-input>
                 </el-form-item>
-                <el-form-item label="名称" >
+                <el-form-item label="姓名" >
                     <el-input v-model="form.nickname" auto-complete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" >
                     <el-input v-model="form.password" auto-complete="off"></el-input>
                 </el-form-item>
-                <el-form-item label="角色">
+                <el-form-item label="角色ID">
                     <el-select v-model="form.role" placeholder="请选择角色">
                         <el-option :label="item.remark" :value="item.id" v-for="(item,index) in role" :key='index'></el-option>
                     </el-select>
@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import { adminList ,adminAdd } from '@/api/stting/admin'
-import { roleList } from '@/api/stting/role'
+import { adminList ,adminAdd } from '@/api/setting/admin'
+import { roleList } from '@/api/setting/role'
 export default {
     //import引入的组件需要注入到对象中才能使用
     components: {},

@@ -1,14 +1,16 @@
 // sidebar
 $menuText:#bfcbd9;
+//单击菜单时候的字体颜色
 $menuActiveText:#409EFF;
-$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+$subMenuActiveText:#ffffff; //https://github.com/ElemeFE/element/issues/12951
 
-$menuBg:#304156;
-$menuHover:#263445;
+$menuBg:#191A23;
+$menuHover:#101117;
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
-
+$subMenuBg:#191A23;
+//鼠标滑过的颜色
+$subMenuHover:#2D8cF0;
+//鼠标滑过宽度
 $sideBarWidth: 210px;
 
 // the :export directive is the magic sauce for webpack

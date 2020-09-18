@@ -1,4 +1,4 @@
-import { login, logout, getInfo,permision } from '@/api/user'
+import { login, logout, getInfo, permision } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
 
@@ -38,8 +38,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       login({ name: name.trim(), password: password }).then(response => {
         const index = response.lastIndexOf('|')
-        const token = "Bearer" + ' ' + response.substring(index+1,response.length)
-        console.log("login -> token", token)
+        const token = 'Bearer' + ' ' + response.substring(index + 1, response.length)
         commit('SET_TOKEN', token)
         setToken(token)
         resolve()
@@ -55,7 +54,7 @@ const actions = {
       getInfo().then(response => {
         const { data } = response
 
-        const { role_remark, name, avatar } = data
+        const { name, avatar } = data
 
         // roles must be a non-empty array
         commit('SET_NAME', name)
@@ -92,14 +91,14 @@ const actions = {
   getPermision({ commit, state }) {
     return new Promise((resolve, reject) => {
       permision().then(response => {
-      const { data } =response
+        const { data } = response
         commit('SET_ROLES', data)
         resolve(data)
       }).catch(error => {
         reject(error)
       })
     })
-  },
+  }
 }
 
 export default {

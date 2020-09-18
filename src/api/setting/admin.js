@@ -9,10 +9,10 @@ export function adminList(params) {
     })
 }
 
-export function adminAdd(params) {
+export function adminAdd(data) {
     return request({
         url: '/admin/admin',
         method: 'post',
-        params
+        data
     })
 }

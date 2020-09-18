@@ -21,7 +21,7 @@ export const constantRouterMap = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'index' }
     },
   ]
   },
@@ -32,6 +32,7 @@ export const constantRouterMap = [
 import settingRouter from './modules/seeting'
 import userRouter from './modules/user'
 import orderRouter from './modules/order'
+import goodsRouter from './modules/goods'
 
 
 // 异步路由
@@ -40,6 +41,7 @@ export const asyncRouterMap = [
   settingRouter,
   userRouter,
   orderRouter,
+  goodsRouter,
     { path: '*', redirect: '/404', hidden: true }
 ];
 

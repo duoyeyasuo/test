@@ -19,7 +19,7 @@
             </el-table-column>
             <el-table-column
             prop="role_remark"
-            label="权限名称"
+            label="管理员角色"
             >
             </el-table-column>
             <el-table-column
@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import { adminList ,adminAdd } from '@/api/stting/admin'
-import { roleList } from '@/api/stting/role'
+import { adminList ,adminAdd } from '@/api/setting/admin'
+import { roleList } from '@/api/setting/role'
 export default {
     //import引入的组件需要注入到对象中才能使用
     components: {},

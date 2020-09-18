@@ -77,6 +77,7 @@
     }
 
     .is-active>.el-submenu__title {
+      //单击菜单时候的字体颜色
       color: $subMenuActiveText !important;
     }
 
@@ -200,8 +201,8 @@
   .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
     &:hover {
-      // you can use $subMenuHover
-      background-color: $menuHover !important;
+      // 鼠标滑过背景颜色
+      background-color: $subMenuHover !important;
     }
   }
 

@@ -9,10 +9,10 @@ export function roleList(params) {
     })
 }
 // 角色新增
-export function roleAdd(params) {
+export function roleAdd(data) {
     return request({
         url: '/admin/roles',
         method: 'post',
-        params
+        data
     })
 }

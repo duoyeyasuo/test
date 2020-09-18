@@ -1,7 +1,7 @@
 <!--  -->
 <template>
     <div class=''>
-        <el-button type="primary" @click="dialogFormVisible=true">新增权限</el-button>
+        <el-button type="primary" @click="dialogFormVisible=true">新增角色</el-button>
         <el-table
             :data="list"
             border
@@ -20,17 +20,20 @@
             <el-table-column
             label="权限"
             >
-
-              <template slot-scope="scope">
+                <template slot-scope="scope">
                     <span style="margin-left: 10px">{{ role(scope.row.permissions) }}</span>
                 </template>
             </el-table-column>
             <el-table-column
             label="操作"
             >
+                <template slot-scope="scope">
+                <el-button type="primary" icon="el-icon-edit"></el-button>
+                <el-button type="danger" icon="el-icon-delete"></el-button>
+            </template>
             </el-table-column>
         </el-table>
-        <el-dialog title="权限新增" :visible.sync="dialogFormVisible" width='30%'>
+        <el-dialog title="新增权限角色" :visible.sync="dialogFormVisible" width='30%'>
             <el-form :model="form">
                 <el-form-item label="角色名称" >
                     <el-input v-model="form.remark" auto-complete="off"></el-input>
@@ -55,8 +58,8 @@
 </template>
 
 <script>
-import { roleList , roleAdd} from '@/api/stting/role'
-import { PermissionList } from '@/api/stting/permission'
+import { roleList , roleAdd} from '@/api/setting/role'
+import { PermissionList } from '@/api/setting/permission'
 export default {
 //import引入的组件需要注入到对象中才能使用
 components: {},
@@ -72,10 +75,7 @@ return {
     },
     prop:{
         label:'remark'
-    },
-    //
-     
-    //
+    }
 };
 },
 //监听属性 类似于data概念
@@ -86,7 +86,6 @@ computed: {
             // for (var i=0;i++;i<data.length) {
             //     console.log(data[i])
             // }
-           
         }
     }
 },
@@ -113,13 +112,10 @@ mounted() {
     roleList ()
     .then ( res => {
         this.list = res.data
-        console.log(this.list)
     })
     PermissionList ()
     .then ( res=> {
         this.permission = res.data
-        // console.log(this.permission)
-
     })
 },
 }

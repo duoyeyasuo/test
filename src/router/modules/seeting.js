@@ -8,7 +8,7 @@ const settingRouter = {
     name: 'setting',
     meta: {
         title: '设置',
-        icon: 'component',
+        icon: 'setting',
         roles: ['sz']
     },
     children:   [
@@ -17,7 +17,7 @@ const settingRouter = {
             component: () => import('@/views/setting/permission/permissionList'),
             name: 'permission',
             meta: {
-                title: '权限设置',
+                title: '权限管理',
                 roles: ['sz'] // or you can only set role in sub nav
             }
         },
@@ -37,6 +37,60 @@ const settingRouter = {
             meta: {
                 title: '管理员设置',
                 roles: ['sz'] // or you can only set role in sub nav
+            }
+        },
+        {
+            path: 'service',
+            component: () => import('@/views/setting/permission/service'),
+            name: 'service',
+            meta: {
+                title: '客服管理',
+                roles: ['sz'] // or you can only set role in sub nav
+            }
+        },
+        {
+            path: 'pages',
+            component: () => import('@/views/setting/permission/pages'),
+            name: 'pages',
+            meta: {
+                title: '页面管理',
+                roles: ['sz'] 
+            }
+        },
+        {
+            path: 'notes',
+            component: () => import('@/views/setting/permission/notes'),
+            name: 'note',
+            meta: {
+                title: '短信设置',
+                roles: ['sz'] 
+            }
+        },
+        {
+            path: 'datAllocation',
+            component: () => import('@/views/setting/permission/datAllocation'),
+            name: 'datAllocation',
+            meta: {
+                title: '数据配置',
+                roles: ['sz'] 
+            }
+        },
+        {
+            path: 'logistics',
+            component: () => import('@/views/setting/permission/logistics'),
+            name: 'logistics',
+            meta: {
+                title: '物流设置',
+                roles: ['sz']
+            }
+        },
+        {
+            path: 'pickGoods',
+            component: () => import('@/views/setting/permission/pickGoods'),
+            name: 'pickGoods',
+            meta: {
+                title: '提货点设置',
+                roles: ['sz'] 
             }
         },
     ]

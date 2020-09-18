@@ -1,4 +1,4 @@
-import Layout from '@/layout'/** When your routing table is too long, you can split it into small modules **/
+import Layout from '@/layout'/** 当路由表太长时，可以将其分割为小模块 **/
 
 const orderRouter = {
     path: '/order',
@@ -8,7 +8,7 @@ const orderRouter = {
     meta: {
         title: '订单',
         icon: 'component',
-        roles: ['dd']
+        roles: ['admin']
     },
     children: [
         {
@@ -17,7 +17,7 @@ const orderRouter = {
             name: 'orderIndex',
             meta: {
                 title: '订单首页',
-                roles: ['dd'] // or you can only set role in sub nav
+                roles: ['admin'] // 你只能在 sub nav中设置角色
             }
         },
     ]
